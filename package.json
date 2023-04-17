@@ -8,8 +8,8 @@
 	"scripts": {
 		"watch": "node-sass --watch assets/scss/custom.scss -o assets/css --source-map true --output-style compressed",
         "build": "yarn run build:fn && yarn run build:lb",
-		"build:fn": "node-sass assets/scss/foundation.scss -o assets/css --output-style compressed && postcss --use autoprefixer -r assets/css/foundation.css --no-map",
-        "build:lb": "node-sass assets/scss/lichtblick.scss -o assets/css --output-style compressed && postcss --use autoprefixer -r assets/css/foundation.css --no-map"
+		"build:fn": "node-sass assets/scss/foundation.scss -o assets/css --output-style compressed",
+        "build:lb": "node-sass assets/scss/lichtblick.scss -o assets/css --output-style compressed"
 	},
 	"dependencies": {
 		"foundation-sites": "6.7.4",
