@@ -1,0 +1,23 @@
+.popup-contact {
+	.popup__content {
+		padding: 106px 0;
+	}
+
+	.gform_wrapper.gravity-theme {
+		.ginput_container_consent {
+			label {
+				a {
+					color: #777777;
+				}
+			}
+		}
+	}
+}
+
+.js-popup-contact {
+	display: none;
+}
+
+.js-open-popup-contact {
+	display: block;
+}

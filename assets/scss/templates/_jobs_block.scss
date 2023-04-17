@@ -1,0 +1,88 @@
+.jobs {
+  &-block {
+    &__top-content {
+      max-width: 706px;
+      margin: 0 auto 75px;
+
+      & * {
+        text-align: center;
+
+        &:last-child {
+          margin-bottom: 0;
+        }
+      }
+
+      .subtitle {
+        margin: 0 auto 16px;
+        @include breakpoint(small down) {
+          margin-bottom: 8px;
+        }
+      }
+
+      @include breakpoint(medium down) {
+        margin: 0 auto 50px;
+      }
+
+    }
+
+    &__button {
+      text-align: center;
+    }
+
+    &__form {
+      max-width: 890px;
+      margin: 0 auto 50px;
+
+      @include breakpoint(991px down) {
+        margin: 0 auto 35px;
+      }
+    }
+  }
+
+  &_list {
+    &__item {
+      padding: 20px 30px 20px 32px;
+      background-color: $light_gray;
+      border-radius: 4px;
+    }
+  }
+
+}
+
+//if Jobs is empty
+.jobs-block.empty_jobs {
+  .grid-container {
+    max-width: 705px;
+    background-color: $light_gray;
+    padding: 75px 61px 75px 60px;
+  }
+
+  .subtitle {
+    text-align: center;
+    margin-bottom: 8px;
+  }
+
+  h4 {
+    font-size: 23px;
+    line-height: 28px;
+    font-weight: 500;
+    color: $text-color;
+    letter-spacing: 0.23px;
+    text-align: center;
+    margin-bottom: 40px;
+  }
+
+  .jobs-block__no_job {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    column-gap: 30px;
+    row-gap: 20px;
+
+    .button.button-secondary {
+      background-color: transparent;
+    }
+  }
+
+}

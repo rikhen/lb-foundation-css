@@ -1,0 +1,124 @@
+.cards {
+  background-color: $light_gray;
+
+  .grid-container {
+    @include breakpoint(medium down) {
+      padding-right: 0;
+      padding-left: 0;
+
+    }
+  }
+
+  &__top-content{
+    max-width: 706px;
+    margin: 0 auto 100px;
+
+    & *{
+      text-align: center;
+    }
+
+    .subtitle {
+      @include breakpoint(small down) {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin: 0 auto 50px;
+    }
+
+    @include breakpoint(medium down) {
+      max-width: 326px;
+      padding-right: .9375rem;
+      padding-left: .9375rem;
+
+    }
+  }
+
+  &-items{
+    grid-column-gap: 30px;
+    grid-row-gap: 80px;
+    grid-template-columns: 1fr 1fr;
+    display: grid;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    @include breakpoint(medium down) {
+      flex-wrap: nowrap;
+      display: flex;
+      overflow: auto;
+      padding-left: .9375rem;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    }
+  }
+}
+
+.card-item{
+
+  @include breakpoint(medium down) {
+    min-width: 290px;
+  }
+
+  &:last-child {
+    @include breakpoint(medium down) {
+      margin-right: .9375rem;
+    }
+  }
+
+  &:hover{
+    .card-item__image img {
+      transform: scale(1.15);
+      transition: all 0.3s ease-in-out;
+    }
+  }
+
+  &__image{
+    display: flex;
+    justify-content: flex-end;
+    align-items: start;
+
+
+    &_wrapper {
+      max-width: 430px;
+      max-height: 242px;
+      overflow: hidden;
+
+      @include breakpoint(medium down) {
+        width: 266px;
+        height: 172px;
+      }
+
+      img{
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        transition: all 0.3s ease-in-out;
+
+      }
+    }
+  }
+
+  &__text{
+    background: $light;
+    padding: 32px;
+    max-width: 307px;
+    margin-top: -123px;
+    z-index: 1;
+    position: relative;
+    h4 {
+      color: $text-color;
+      margin-bottom: 16px;
+    }
+
+    @include breakpoint(medium down) {
+      margin-top: -43px;
+      max-width: 274px;
+      padding: 24px;
+    }
+  }
+}

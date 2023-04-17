@@ -1,0 +1,137 @@
+/* Breakpoints */
+$breakpoint-s: 414px;
+$breakpoint-m: 768px;
+$breakpoint-l: 1024px;
+$breakpoint-xl: 1366px;
+$breakpoint-xxl: 1440px;
+$breakpoint-xxxl: 1920px;
+
+/* Viewport (container width) */
+$viewport-px-s: 328px;
+$viewport-px-m: 680px;
+$viewport-px-l: 768px;
+$viewport-px-xl: 1032px;
+$viewport-px-xxl: 1120px;
+$viewport-px-xxxl: 1452px;
+
+/* (value in vw) = (max_width_in_px / breakpoint_in_px) x 100vw */
+$viewport-s: ($viewport-px-s / $breakpoint-s) * 100vw;
+$viewport-m: ($viewport-px-m / $breakpoint-m) * 100vw;
+$viewport-l: ($viewport-px-l / $breakpoint-l) * 100vw;
+$viewport-xl: ($viewport-px-xl / $breakpoint-xl) * 100vw;
+$viewport-xxl: ($viewport-px-xxl / $breakpoint-xxl) * 100vw;
+$viewport-xxxl: ($viewport-px-xxxl / $breakpoint-xxxl) * 100vw;
+
+/* Grid Offset */
+$offset-s: 0px;
+$offset-m: 0px;
+$offset-l: 0px;
+$offset-xl: 0px;;
+$offset-xxl: 0px;
+$offset-xxxl: 0px;
+$offset-full: 0px;
+
+/* Grid Gutter */
+$gutter-s: 6.417vw;
+$gutter-m: 3.125vw;
+$gutter-l: 2.344vw;
+$gutter-xl: 2.344vw;
+$gutter-xxl: 1.875vw;
+$gutter-xxxl: 1.875vw;
+
+/* Grid Column Numbers (Fractions) */
+$columns-s: 4;
+$columns-m: 8;
+$columns-l: 12;
+$columns-xl: 12;
+$columns-xxl: 12;
+$columns-xxxl: 12;
+
+$min-width: 0px;
+
+/* Grid Overlay */
+$grid_color: hsla(204, 80%, 72%, 0.25);
+
+// Define breakpoints and their properties as a map
+$breakpoints-map: (
+    "s": ("min-width": 0,
+        "columns": $columns-s,
+        "gutter": $gutter-s,
+        "offset": $offset-s,
+        "viewport": $viewport-s,
+    ),
+    "m": ("min-width": $breakpoint-s,
+        "columns": $columns-m,
+        "gutter": $gutter-m,
+        "offset": $offset-m,
+        "viewport": $viewport-m,
+    ),
+    "l": ("min-width": $breakpoint-l,
+        "columns": $columns-l,
+        "gutter": $gutter-l,
+        "offset": $offset-l,
+        "viewport": $viewport-l,
+    ),
+    "xl": ("min-width": $breakpoint-xl,
+        "columns": $columns-xl,
+        "gutter": $gutter-xl,
+        "offset": $offset-xl,
+        "viewport": $viewport-xl,
+    ),
+    "xxl": ("min-width": $breakpoint-xxl,
+        "columns": $columns-xxl,
+        "gutter": $gutter-xxl,
+        "offset": $offset-xxl,
+        "viewport": $viewport-xxl,
+    ),
+    "xxxl": ("min-width": $breakpoint-xxxl,
+        "columns": $columns-xxxl,
+        "gutter": $gutter-xxxl,
+        "offset": $offset-xxxl,
+        "viewport": $viewport-xxxl,
+    ),
+);
+
+// Loop through the breakpoints map
+@each $breakpoint,
+$properties in $breakpoints-map {
+    $min-width: map-get($properties, "min-width");
+    $columns: map-get($properties, "columns");
+    $gutter: map-get($properties, "gutter");
+    $offset: map-get($properties, "offset");
+    $max-width: map-get($properties, "viewport");
+
+    @media only screen and (min-width: $min-width) {
+
+        /* Helper variables */
+        :root {
+            --color: $grid_color;
+            --repeating-width: calc(100% / #{$columns});
+            --column-width: calc((100% / #{$columns}) - #{$gutter});
+            --background-width: calc(100% + #{$gutter});
+            --background-columns: repeating-linear-gradient(to right,
+            hsla(204, 80%, 72%, 0.25),
+            hsla(204, 80%, 72%, 0.25) var(--column-width),
+                    transparent var(--column-width),
+                    transparent var(--repeating-width));
+            --offset: #{$offset};
+            --max-width: #{$max-width};
+            --columns: #{$columns};
+            --gutter: #{$gutter};
+        }
+        html::before {
+            content: "";
+            display: block;
+            position: fixed;
+            top: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            height: 100%;
+            width: calc(100% - (2 * var(--offset)));
+            max-width: var(--max-width);
+            background-image: var(--background-columns);  
+            background-size: var(--background-width) 100%;
+            z-index: 9999;
+        }
+    }
+}

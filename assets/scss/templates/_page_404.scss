@@ -1,0 +1,32 @@
+.not-found {
+  padding: 200px .9375rem 247px;
+
+  @include breakpoint(small down) {
+    padding: 100px .9375rem 120px;
+  }
+
+  h1 {
+    margin-bottom: 31px;
+
+    @include breakpoint(small down) {
+      margin-bottom: 28px;
+    }
+  }
+
+  .subtitle {
+    @include breakpoint(small down) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__buttons {
+    column-gap: 32px;
+    display: flex;
+    justify-content: center;
+
+    @include breakpoint(small down) {
+      flex-direction: column;
+      row-gap: 32px;
+    }
+  }
+}

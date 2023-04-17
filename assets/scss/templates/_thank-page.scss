@@ -1,0 +1,32 @@
+.thank-page {
+  padding: 200px 0 155px;
+
+  @include breakpoint(small down) {
+    padding: 100px 0 63px;
+  }
+
+  h1, .subtitle {
+    max-width: 522px;
+    margin: 0 auto 16px;
+  }
+
+  h1 {
+    @include breakpoint(small down) {
+      margin-bottom: 28px;
+    }
+  }
+
+  .subtitle {
+    @include breakpoint(small down) {
+      margin-bottom: 20px;
+    }
+  }
+
+  &__top-content {
+    max-width: 706px;
+    margin: 0 auto 43px;
+    @include breakpoint(small down) {
+      margin: 0 auto 28px;
+    }
+  }
+}

@@ -1,0 +1,55 @@
+.cta-block {
+  background: $sub_color;
+  padding: 75px 0;
+
+  @include breakpoint(small down) {
+    padding: 50px 0;
+  }
+
+  &__row {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 50px;
+    @include breakpoint(small down) {
+      flex-direction: column;
+      row-gap: 32px;
+      align-items: center;
+      max-width: 326px;
+      margin: 0 auto;
+    }
+  }
+
+  &__text {
+    max-width: 706px;
+    display: flex;
+    align-items: center;
+    @include breakpoint(medium down) {
+      max-width: 500px;
+    }
+
+    * {
+      color: $light;
+      @include breakpoint(small down) {
+        text-align: center
+      }
+    }
+  }
+
+  &__button {
+    display: flex;
+    align-items: center;
+
+    a {
+      @include breakpoint(medium down) {
+        margin-top: 0;
+      }
+
+      &:hover {
+        transform: translateY(-8px);
+        background-color: #FAFAFA;
+        color: #EB0A0A;
+      }
+    }
+  }
+
+}

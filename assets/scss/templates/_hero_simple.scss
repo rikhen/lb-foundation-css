@@ -1,0 +1,85 @@
+.hero-simple {
+
+  background: linear-gradient(to bottom, $light_gray 62%, $light 62%);
+  @include breakpoint(small down) {
+    background: linear-gradient(to bottom, $light_gray 78%, $light 78%);
+  }
+
+  &__top-content {
+    max-width: 706px;
+    margin: 0 auto 40px;
+
+    & * {
+      text-align: center;
+    }
+
+    .subtitle {
+      max-width: 467px;
+      margin: 0 auto 8px;
+      @include breakpoint(small down) {
+        margin-bottom: 12px;
+      }
+    }
+
+    h1 {
+      margin-bottom: 40px;
+    }
+
+    @include breakpoint(medium down) {
+      margin: 0 auto 50px;
+    }
+
+    @include breakpoint(small down) {
+      max-width: 325px;
+    }
+  }
+
+  &__social {
+    display: flex;
+    column-gap: 16px;
+    align-items: center;
+
+
+    &-wrapper {
+      display: flex;
+      column-gap: 26px;
+      justify-content: center;
+      margin-bottom: 75px;
+      @include breakpoint(small down) {
+        margin-bottom: 28px;
+
+      }
+    }
+
+    &-text {
+      display: flex;
+      align-items: center;
+      transform: translateY(2px);
+    }
+
+    &_item {
+      cursor: pointer;
+    }
+  }
+
+  &__image {
+    max-width: 887px;
+    margin: 0 auto;
+    @include breakpoint(small down) {
+      max-width: 358px;
+    }
+
+    .image-desktop {
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+
+    .image-mobile {
+      display: none;
+      @include breakpoint(small down) {
+        display: block;
+      }
+    }
+  }
+}

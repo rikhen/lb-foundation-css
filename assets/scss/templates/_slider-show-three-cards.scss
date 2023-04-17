@@ -1,0 +1,36 @@
+.slider-show-three-cards {
+
+	.grid-container {
+		@include breakpoint(small down) {
+			padding: 0 32px;
+		}
+	}
+
+	&__content {
+		margin-bottom: 50px;
+		max-width: 706px;
+		margin-left: auto;
+		margin-right: auto;
+		text-align: center;
+
+		@include breakpoint(medium) {
+			margin-bottom: 75px;
+		}
+
+		&--subtitle {
+			margin-bottom: 8px;
+
+			@include breakpoint(medium) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+
+	&__slider {
+		.grid-container {
+			@include breakpoint(large down) {
+				padding: 0;
+			}
+		}
+	}
+}

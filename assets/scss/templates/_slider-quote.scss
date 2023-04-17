@@ -1,0 +1,30 @@
+.slider-quote-wrapper {
+	padding: 75px 0;
+	background-color: $light_gray;
+
+	.grid-container {
+		@include breakpoint(small down) {
+			padding: 0 32px;
+		}
+	}
+
+	&__content {
+		margin-bottom: 50px;
+		max-width: 706px;
+		margin-left: auto;
+		margin-right: auto;
+
+		@include breakpoint(medium) {
+			text-align: center;
+			margin-bottom: 75px;
+		}
+
+		&--subtitle {
+			margin-bottom: 8px;
+
+			@include breakpoint(medium) {
+				margin-bottom: 16px;
+			}
+		}
+	}
+}

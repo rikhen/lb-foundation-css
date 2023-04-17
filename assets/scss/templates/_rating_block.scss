@@ -1,0 +1,131 @@
+.rating-block {
+  background-color: $light_gray;
+  padding: 100px 0;
+
+  .cell{
+    @include breakpoint(small down) {
+      max-width: 326px;
+      margin: 0 auto;
+    }
+
+    .cell {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+    }
+  }
+
+  @include breakpoint(small down) {
+    padding: 62px 0 80px;
+
+  }
+
+  &__text {
+    max-width: 430px;
+
+    .subtitle {
+      @include breakpoint(small down) {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__star {
+    margin-bottom: 30px;
+
+    @include breakpoint(medium down) {
+      margin-bottom: 16px;
+    }
+  }
+
+  &__line {
+    &-number {
+      margin-bottom: 0;
+    }
+
+    &-text {
+      text-transform: uppercase;
+      line-height: 28px;
+      letter-spacing: 1.5px;
+    }
+  }
+
+  &__stars {
+    position: relative;
+
+    &-content {
+      @include breakpoint(small down) {
+        display: flex;
+        align-items: center;
+        column-gap: 16px;
+        margin-bottom: 50px;
+      }
+    }
+
+    &-text {
+      text-transform: uppercase;
+      font-size: 15px;
+      line-height: 28px;
+      letter-spacing: 1.5px;
+    }
+
+    &-number {
+      margin-bottom: 0;
+    }
+
+    &-top {
+      position: absolute;
+      top: 0;
+      overflow: hidden;
+      width: 203px;
+      left: -0.5px;
+      height: 26.15px;
+
+      img {
+        object-fit: cover;
+        object-position: left;
+        height: 100%;
+        width: 100%;
+      }
+    }
+
+    &-bottom {
+      width: 204.5px;
+      height: 27px;
+
+      img {
+        height: 100%;
+      }
+    }
+
+  }
+
+  progress {
+    height: 11px;
+    -webkit-appearance: none;
+    margin: 9px 0 31px;
+    width: 245px;
+
+    @include breakpoint(small down) {
+      margin-top: 0;
+      margin-bottom: 15px;
+      width: 207px;
+    }
+
+    &::-webkit-progress-bar {
+      background-color: #f0f0f0;
+    }
+
+    &::-webkit-progress-value {
+      background-color: $main_color;
+    }
+
+    &::-moz-progress-bar {
+      background-color: $main_color;
+    }
+  }
+}

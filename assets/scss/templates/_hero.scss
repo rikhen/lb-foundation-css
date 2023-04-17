@@ -1,0 +1,305 @@
+/* ---------------------------------------
+	TMPL: Hero
+--------------------------------------- */
+
+.hero {
+  &-section {
+    background-color: $light_gray;
+
+    &.low {
+      padding-bottom: 114px;
+      @include breakpoint(small down) {
+        padding-bottom: 30px;
+      }
+    }
+
+    &.high {
+      min-height: 618px;
+
+      .hero-section__image-desktop {
+        height: 618px;
+      }
+
+      .hero-section__wrapper {
+        min-height: 618px;
+      }
+
+      @include breakpoint(medium down) {
+        min-height: auto;
+      }
+    }
+
+    &.low {
+      .hero-section__image-desktop {
+        height: 502px;
+      }
+
+      @include breakpoint(medium down) {
+        min-height: 590px;
+      }
+    }
+
+    &__wrapper {
+      display: flex;
+      align-items: center;
+      background-repeat: no-repeat;
+      background-position: right;
+      background-color: $light_gray;
+      min-height: 502px;
+      overflow: hidden;
+      @include breakpoint(medium down) {
+        align-items: end;
+        flex-direction: column;
+        background-image: none !important;
+      }
+    }
+
+    &__image-tablet {
+      display: none;
+      @include breakpoint(medium down) {
+        display: block;
+      }
+
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+
+    &__image-mobile {
+      display: none;
+      @include breakpoint(small down) {
+        display: block;
+        height: 513px;
+        width: 100%;
+        object-fit: cover;
+      }
+    }
+
+    &__image-desktop {
+      z-index: 0;
+      position: absolute;
+      right: -116px;
+      @include breakpoint(medium down) {
+        display: none;
+      }
+    }
+
+
+    @include breakpoint(xxlarge up) {
+      background-size: 1036px 502px;
+    }
+
+    @include breakpoint(small down) {
+      min-height: calc(100vh - 95px);
+      position: relative;
+    }
+  }
+
+  &-content {
+    background-color: $light;
+    padding: 40px;
+    z-index: 1;
+
+    &__buttons {
+      display: flex;
+      column-gap: 30px;
+      @include breakpoint(small down) {
+        row-gap: 20px;
+      }
+    }
+
+    &__text {
+      margin-bottom: 40px;
+
+      h1 {
+        margin-bottom: 24px;
+        @include breakpoint(medium down) {
+          margin-bottom: 16px;
+        }
+      }
+
+      @include breakpoint(medium down) {
+        margin-bottom: 32px;
+      }
+    }
+
+    &__text *:last-child {
+      margin-bottom: 0;
+    }
+
+    &.small {
+      max-width: 416px;
+    }
+
+    &.big {
+      max-width: 563px;
+    }
+
+    &.large {
+      max-width: 639px;
+    }
+
+    @include breakpoint(medium down) {
+      margin-top: -100px;
+      padding: 24px;
+    }
+
+  }
+
+  &-slide {
+    position: relative;
+    z-index: 10;
+    height: 700px;
+    @include breakpoint(medium down) {
+      height: 500px;
+    }
+    @include breakpoint(small down) {
+      height: 300px;
+    }
+
+    &.hero-video {
+      z-index: 1;
+    }
+  }
+
+  &-image {
+    height: 100%;
+    display: flex;
+    background-position: center;
+    background-size: cover;
+    position: relative;
+    pointer-events: none;
+
+    // Overlay
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+  }
+
+  &-container {
+    height: 100%;
+    position: relative;
+    align-items: center;
+
+    @include breakpoint(large) {
+      display: flex;
+    }
+
+    @include breakpoint(small down) {
+      height: auto;
+      position: absolute;
+      bottom: 31px;
+    }
+  }
+
+
+  // Content Styles
+  &-content {
+    height: 100%;
+  }
+
+  &-video {
+    &-holder {
+      display: block;
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    &-container {
+      position: absolute;
+      width: 100%;
+      height: auto;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      padding-bottom: 56.25%;
+    }
+
+    .hero-container {
+      position: absolute;
+      top: 0;
+      left: 50%;
+      height: 100%;
+      width: 100%;
+      transform: translateX(-50%);
+    }
+  }
+
+
+}
+
+.jobs-hero {
+  @include breakpoint(small down) {
+    min-height: 618px;
+  }
+
+  .hero-content {
+    height: auto;
+    max-width: 553px;
+
+    @include breakpoint(small down) {
+      margin-top: -233px;
+    }
+  }
+
+  .hero-content__text {
+    margin-bottom: 24px;
+    @include breakpoint(small down) {
+      margin-bottom: 32px;
+    }
+  }
+
+  .hero-section__image-desktop {
+    height: 502px;
+  }
+
+  &__details {
+    display: flex;
+    column-gap: 56px;
+    margin-bottom: 40px;
+
+    @include breakpoint(small down) {
+      flex-direction: column;
+      row-gap: 16px;
+      margin-bottom: 32px;
+
+    }
+
+    &_item {
+      display: flex;
+      column-gap: 16px;
+      align-items: center;
+
+      p {
+        text-transform: capitalize;
+        transform: translateY(3px);
+        font-weight: 500;
+      }
+
+      img {
+        height: 21px;
+      }
+    }
+  }
+
+  &__buttons {
+    display: flex;
+    column-gap: 30px;
+
+    @include breakpoint(small down) {
+      flex-direction: column;
+      row-gap: 18px;
+    }
+  }
+}

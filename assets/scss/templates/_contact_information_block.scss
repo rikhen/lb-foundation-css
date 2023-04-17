@@ -1,0 +1,152 @@
+.contact-info {
+  position: relative;
+  padding-bottom: 65px;
+
+  @include breakpoint(medium down) {
+    padding-bottom: 290px;
+  }
+
+  @include breakpoint(small down) {
+    background: linear-gradient(to bottom, $light 34%, $light_gray 34%);
+  }
+
+  &__row{
+    display: flex;
+    justify-content: flex-end;
+    align-items: end;
+    position: relative;
+    @include breakpoint(medium down) {
+      flex-direction: row;
+    }
+  }
+
+  &__image {
+    max-width: 706px;
+    max-height: 482px;
+
+    @include breakpoint(small down) {
+      max-width: 289px;
+      max-height: 389px;
+      margin-right: -20px;
+    }
+
+    img {
+      object-fit: cover;
+    }
+
+    .image-desktop{
+      @include breakpoint(small down) {
+        display: none;
+      }
+    }
+
+    .image-mobile{
+      display: none;
+      @include breakpoint(small down) {
+        display: block;
+      }
+    }
+  }
+
+  &__background{
+    width: 658px;
+    height: 480px;
+    background: $light_gray;
+    position: absolute;
+    bottom: 0;
+    z-index: -1;
+
+    @include breakpoint(small down) {
+      display: none;
+    }
+
+  }
+
+  &__text {
+    background: $light;
+    padding: 40px;
+    left: 94px;
+    z-index: 2;
+    width: 495px;
+    position: absolute;
+
+    @include breakpoint(medium down) {
+      bottom: -243px;
+      left: 45px;
+    }
+
+    @include breakpoint(small down) {
+      width: 100%;
+      left: 0;
+      padding: 24px;
+    }
+
+    &__title{
+      margin-bottom: 32px;
+    }
+
+    &__name{
+      margin-bottom: 0;
+      text-transform: uppercase;
+      letter-spacing: 1.5px;
+    }
+
+    &__job{
+      margin-bottom: 24px;
+    }
+
+    &__phone{
+      margin-bottom: 8px;
+
+      a {
+        color: $text-color;
+        border-bottom: none;
+        font-weight: 400;
+
+        &:hover {
+          color: $main_color;
+        }
+
+        &:hover {
+          color: $sub_color;
+        }
+      }
+
+    }
+
+    &__email {
+      margin-bottom: 0;
+
+      a {
+        color: $text-color;
+        border-bottom: none;
+        font-weight: 400;
+
+        &:hover {
+          color: $main_color;
+        }
+
+        &:hover {
+          color: $sub_color;
+        }
+      }
+    }
+  }
+
+  &__button{
+    margin-top: 40px;
+
+    @include breakpoint(small down) {
+      margin-top: 32px;
+
+    }
+  }
+}
+
+.link-primary:hover {
+  transform: translatey(-5px);
+}
+
+.contact-info {
+  overflow: hidden;
+}

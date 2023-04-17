@@ -1,0 +1,105 @@
+.text-share {
+  &__content {
+    max-width: 706px;
+    margin: 0 auto 80px;
+    @include breakpoint(small down) {
+      max-width: 326px;
+      margin: 0 auto 64px;
+    }
+
+    &_title {
+      margin-bottom: 32px;
+    }
+
+    &_item {
+      &:not(:last-child) {
+        margin-bottom: 64px;
+      }
+    }
+
+    ul {
+      list-style: none;
+      padding-left: 35px;
+      margin: 24px 0 0;
+
+      li {
+        position: relative;
+
+        &:not(:last-child) {
+          margin-bottom: 16px;
+        }
+
+        &:before {
+          content: '';
+          width: 5px;
+          height: 5px;
+          border-radius: 50%;
+          margin-right: 30px;
+          background-color: $main_color;
+          display: block;
+          position: absolute;
+          left: -35px;
+          top: 8px;
+          @include breakpoint(small down) {
+            left: -27px;
+
+          }
+        }
+      }
+    }
+  }
+
+  &__bottom {
+    max-width: 706px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    @include breakpoint(small down) {
+      max-width: 326px;
+      flex-direction: column;
+      row-gap: 24px;
+      align-items: flex-start;
+
+    }
+  }
+
+  &__share {
+    display: flex;
+    align-items: center;
+
+    p {
+      margin: 0 26px 0 0;
+    }
+  }
+
+  &__icons {
+    display: flex;
+    column-gap: 16px;
+  }
+
+  &__repeater {
+    display: flex;
+    flex-direction: column;
+    row-gap: 16px;
+    max-width: 675px;
+
+    &_item {
+      display: flex;
+      column-gap: 30px;
+      @include breakpoint(small down) {
+        flex-direction: column;
+      }
+      &-title {
+        color: $main_color;
+        min-width: 123px;
+        max-width: 123px;
+
+        p:last-child {
+          margin-bottom: 0;
+        }
+      }
+    }
+  }
+}

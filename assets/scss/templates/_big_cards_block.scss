@@ -1,0 +1,147 @@
+.big-cards {
+
+  @include breakpoint(small down) {
+    background: linear-gradient(to bottom, $light 34%, $light_gray 34%);
+    padding-bottom: 25px;
+  }
+
+  .grid-container {
+    @include breakpoint(small down) {
+      padding-right: 0;
+    }
+  }
+
+  &__top-content {
+    max-width: 706px;
+    margin: 0 auto 75px;
+
+    & * {
+      text-align: center;
+    }
+
+    .subtitle {
+      max-width: 538px;
+      margin: 0 auto 16px;
+      @include breakpoint(small down) {
+        margin-bottom: 8px;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin: 0 auto 50px;
+    }
+
+    @include breakpoint(small down) {
+      max-width: 326px;
+      padding-right: .9375rem;
+    }
+  }
+
+  &__items {
+    display: flex;
+    column-gap: 30px;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+
+    @include breakpoint(small down) {
+      overflow-y: hidden;
+      flex-wrap: nowrap;
+      column-gap: 52px;
+
+      &::-webkit-scrollbar {
+        width: 0;
+        height: 0;
+        display: none;
+      }
+    }
+  }
+
+  &__item {
+    background: $light_gray;
+    padding: 0 59px 61px 0;
+    max-width: calc((100% - 30px) / 2);
+
+    &:hover {
+      .big-cards__item__image {
+        img {
+          transform: scale(1.1);
+        }
+      }
+    }
+
+    @include breakpoint(medium down) {
+      padding: 0 30px 30px 0;
+    }
+
+    @include breakpoint(small down) {
+      min-width: 290px;
+      background: none;
+      padding: 0 16px 0 0;
+
+    }
+
+    &:last-child {
+      @include breakpoint(small down) {
+        margin-right: .9375rem;
+      }
+    }
+
+    &__image {
+      max-width: 460px;
+      max-height: 287px;
+      overflow: hidden;
+
+      @include breakpoint(small down) {
+        width: 266px;
+        height: 172px;
+        margin-left: 25px;
+      }
+
+      img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+        transition: .3s;
+      }
+    }
+
+    &__text {
+      background: $light;
+      margin-left: 65px;
+      padding: 48px;
+      margin-top: -40px;
+      position: relative;
+
+      @include breakpoint(medium down) {
+        margin-left: 30px;
+        padding: 24px;
+      }
+
+      @include breakpoint(small down) {
+        margin-left: 0;
+        margin-top: -45px;
+        z-index: 1;
+        position: relative;
+        max-width: 274px;
+      }
+
+      h3 {
+        margin-bottom: 24px;
+      }
+
+      p:last-of-type{
+        margin-bottom: 32px;
+      }
+
+      .subtitle {
+        @include breakpoint(small down) {
+          margin-bottom: 8px;
+        }
+      }
+    }
+
+    &__button {
+      margin-top: 32px;
+    }
+  }
+}

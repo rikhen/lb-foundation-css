@@ -1,0 +1,333 @@
+.form-block {
+
+  &.background-gray {
+    background-color: $light_gray;
+
+    .form-block__form input[type=text], .form-block__form textarea, .form-block__form input[type=email], .form-block__form input[type=tel], .form-block__form select,
+    .form-block__form .ginput_container_select .custom-select {
+      background-color: $light;
+    }
+  }
+
+  &__top-content {
+    max-width: 706px;
+    margin: 0 auto 75px;
+
+    &.top-content_small_margin {
+      margin: 0 auto 40px;
+    }
+
+    & * {
+      text-align: center;
+
+      &:last-child {
+        margin-bottom: 0;
+      }
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    .subtitle {
+      margin: 0 auto 16px;
+      @include breakpoint(small down) {
+        margin-bottom: 8px;
+      }
+    }
+
+
+    @include breakpoint(medium down) {
+      margin: 0 auto 50px;
+    }
+
+    @include breakpoint(small down) {
+      max-width: 326px;
+    }
+  }
+
+  &__form {
+    max-width: 706px;
+    margin: 0 auto;
+
+    textarea {
+      resize: none;
+    }
+
+    input[type=text], textarea, input[type=email], input[type=tel], select {
+      background-color: $light_gray;
+      border: none;
+      padding: 17px 25px;
+      border-radius: 4px;
+    }
+
+    textarea::placeholder, input[type=tel]::placeholder {
+      color: $dark_gray;
+    }
+
+    input[type=text]:focus::placeholder, input[type=email]:focus::placeholder, input[type=tel]:focus::placeholder, textarea:focus::placeholder {
+      color: transparent;
+    }
+
+    input[type=text], input[type=email], input[type=tel], textarea {
+      line-height: 23px;
+      letter-spacing: 0.15px;
+    }
+
+    #field_3_17, #gform_drag_drop_area_3_18{
+      margin-top: 8px;
+      @include breakpoint(small down) {
+        margin-top: 0;
+      }
+    }
+
+    #field_3_8{
+      margin-top: 24px;
+      @include breakpoint(small down) {
+        margin-top: 0;
+      }
+    }
+
+
+
+    .gform_wrapper.gravity-theme .gfield textarea.large {
+      height: 105px;
+      padding: 15px 25px 15px 15px;
+    }
+
+    .select {
+      position: relative;
+    }
+
+    .ginput_container_select .custom-select {
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      background-color: $light_gray;
+      padding: 17px 25px 17px 13px;
+      height: 100%;
+      display: flex;
+      align-items: center;
+      color: #262626;
+      font-weight: 500;
+      font-size: 15px;
+      line-height: 23px;
+      letter-spacing: 0.15px;
+
+      &.active {
+        border-top: 1px solid $text-color;
+        border-left: 1px solid $text-color;
+        border-right: 1px solid $text-color;
+        border-radius: 4px 4px 0 0;
+        color: $text-color;
+
+        &:after {
+          transform: rotate(0);
+        }
+      }
+
+      &:after {
+        width: 15px;
+        height: 7px;
+        top: 40%;
+        right: 13px;
+        transition: all 0.5s;
+        content: "";
+        background-image: url("../../assets/images/select-icon.svg");
+        background-repeat: no-repeat;
+        position: absolute;
+        transform: rotate(180deg);
+
+      }
+    }
+
+    .ginput_container_select .select-options {
+      overflow-y: auto;
+      display: block;
+      position: absolute;
+      top: 100%;
+      right: 0;
+      left: 0;
+      z-index: 999;
+      margin: 0;
+      list-style: none;
+      background-color: $light;
+      padding: 14px 15px 16px;
+      border: 1px solid $text-color;
+      border-radius: 0 0 4px 4px;
+      max-height: 205px;
+
+      li:not(:last-child) {
+        margin-bottom: 16px;
+      }
+
+      li:hover {
+        color: $main_color;
+      }
+    }
+
+    #field_3_6 .ginput_container_select .select-options {
+      max-height: 171px;
+    }
+
+    #field_1_6 .ginput_container_select .select-options {
+      max-height: 145px;
+    }
+
+    .gform_wrapper.gravity-theme .gform_drop_area {
+      background: none;
+      padding: 0;
+      border: 0;
+      margin: 0;
+    }
+
+    .gfield--input-type-consent:first-of-type {
+      margin-top: 24px;
+    }
+
+    .gform_wrapper.gravity-theme input[type="submit"] {
+      margin-top: 42px;
+      @include breakpoint(small down) {
+        margin-top: 32px;
+      }
+    }
+
+    .upload-text {
+      display: flex;
+      align-items: center;
+      font-size: 15px;
+      line-height: 23px;
+      font-weight: 400;
+      color: $text-color;
+      letter-spacing: 0.15px;
+      max-width: 429px;
+
+      @include breakpoint(medium down) {
+        font-size: 12px;
+        line-height: 18px;
+      }
+    }
+
+    .gform_drop_area button {
+      border: 1px solid $dark_gray;
+      background: transparent;
+      color: #777;
+      transition: background-color .3s linear, color .3s linear;
+
+      &:hover {
+        border: 1px solid #B30000;
+        color: #B30000;
+      }
+    }
+
+    .gform_footer {
+      display: flex;
+      justify-content: center;
+    }
+
+    .gform_wrapper.gravity-theme .gform_fields {
+      grid-row-gap: 24px;
+      grid-column-gap: 30px;
+    }
+
+    .gform_wrapper.gravity-theme .ginput_complex span {
+      @include breakpoint(small down) {
+        margin-bottom: 24px;
+      }
+    }
+
+    .gform_wrapper.gravity-theme .ginput_complex span:last-child {
+      @include breakpoint(small down) {
+        margin-bottom: 0;
+      }
+    }
+
+    .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) {
+      padding-right: 15px;
+      @include breakpoint(small down) {
+        padding-right: 0;
+      }
+    }
+
+    .gform_wrapper.gravity-theme .ginput_complex:not(.ginput_container_address) span:not([style*="display:none"]):not(.ginput_full) ~ span:not(.ginput_full) {
+      padding-left: 15px;
+      @include breakpoint(small down) {
+        padding-left: 0;
+      }
+    }
+
+    .gform_wrapper.gravity-theme .ginput_container_consent label {
+      color: $text-color;
+      font-weight: 400;
+
+      a {
+        color: $text-color;
+        font-weight: 400;
+        transition: color .3s linear;
+
+        &:hover {
+          color: $sub_color;
+        }
+      }
+    }
+
+    .gform_wrapper.gravity-theme .ginput_container_consent label:before {
+      border: 1px solid $text-color;
+    }
+
+    .gform_wrapper.gravity-theme .ginput_container_consent label:after {
+      background: $text-color;
+    }
+
+    .gform_wrapper.gravity-theme .ginput_container_date input {
+      width: 100%;
+    }
+
+    .gform_wrapper.gravity-theme .gfield_error .ginput_container_consent label,
+    .gform_wrapper.gravity-theme .gfield_error .ginput_container_consent label a {
+      color: #c02b0a;
+    }
+
+    .gform_wrapper.gravity-theme .gfield_error .ginput_container_consent label {
+      &:before {
+        border: 1px solid #c02b0a;
+      }
+
+      &:after {
+        background-color: #c02b0a;
+      }
+    }
+
+    .gform_wrapper.gravity-theme .gfield_description.gform_fileupload_rules,
+    .gform_wrapper.gravity-theme .gform_drop_instructions {
+      display: none;
+    }
+
+    .gform_confirmation_message {
+      color: $text-color;
+    }
+  }
+}
+
+body .gravity-theme.ui-datepicker .ui-datepicker-header select {
+  width: 54px;
+  background-size: 17px 23px !important;
+  background-position: 235% 50%;
+}
+
+.form-block__form .gform_wrapper.gravity-theme .gfield_required {
+  display: none;
+}
+
+.gform_required_legend {
+  display: none;
+}
+
+.dashicons-trash:before {
+  color: $sub_color;
+}
+
+.gform_wrapper.gravity-theme .gform_delete_file {
+  padding: 0;
+}

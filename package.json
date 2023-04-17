@@ -1,0 +1,28 @@
+{
+	"name": "lb-foundation-template",
+	"version": "1.0.0",
+	"description": "Template to test Foundation CSS specification",
+	"author": "Lichtblick",
+	"license": "ISC",
+	"main": "index.js",
+	"scripts": {
+		"watch": "node-sass --watch assets/scss/custom.scss -o assets/css --source-map true --output-style compressed",
+        "build": "yarn run build:fn && yarn run build:lb",
+		"build:fn": "node-sass assets/scss/foundation.scss -o assets/css --output-style compressed && postcss --use autoprefixer -r assets/css/foundation.css --no-map",
+        "build:lb": "node-sass assets/scss/lichtblick.scss -o assets/css --output-style compressed && postcss --use autoprefixer -r assets/css/foundation.css --no-map"
+	},
+	"dependencies": {
+		"foundation-sites": "6.7.4",
+		"jquery": "^3.6.0",
+		"motion-ui": "latest",
+		"node-sass": "^8.0.0",
+		"postcss": "^8.4.21",
+		"what-input": "^5.2.10"
+	},
+	"devDependencies": {
+		"babel-core": "^6.26.3",
+		"babel-plugin-transform-runtime": "^6.23.0",
+		"babel-preset-env": "^1.7.0"
+	},
+	"keywords": []
+}

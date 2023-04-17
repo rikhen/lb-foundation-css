@@ -1,0 +1,102 @@
+.page-badge {
+  position: fixed;
+  bottom: 22px;
+  right: 25px;
+  width: 146px;
+  height: 146px;
+  border-radius: 50%;
+  z-index: 999;
+  text-decoration: none;
+  display: flex;
+  padding-top: 51px;
+  flex-direction: column;
+  align-items: center;
+  border: 1px solid $light;
+  box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16);
+  transition: all 0.3s ease-in-out;
+
+  &:hover {
+    bottom: 27px;
+
+    svg {
+      margin-top: -2px;
+      transition: scale 0.3s linear;
+    }
+
+    svg * {
+      transition: scale 0.3s linear;
+    }
+
+    #Path_6983 {
+      transform: translate(5px, 3px);
+    }
+
+    #Path_6982 {
+      transform: translate(2px, 8px);
+    }
+
+    #Path_6985 {
+      transform: translate(10px, 1px);
+    }
+
+    #Path_6984 {
+      transform: translate(13px, 3px);
+    }
+
+    #Path_6986 {
+      transform: translate(14px, 8px);
+    }
+
+  }
+
+  @include breakpoint(small down) {
+    width: 88px;
+    height: 88px;
+    padding-top: 26px;
+    bottom: 25px;
+    right: 17px;
+  }
+
+  p {
+    color: $light;
+    line-height: 21px;
+    text-align: center;
+    max-width: 98px;
+    letter-spacing: 0.45px;
+    margin-bottom: 4px;
+    font-weight: 500;
+    @include breakpoint(small down) {
+      margin-bottom: 0;
+      font-size: 13px;
+      line-height: 18px;
+      letter-spacing: 0.13px
+    }
+  }
+
+  svg {
+    transform: rotate(-45deg);
+    margin-left: 54px;
+    transition: scale 0.3s linear;
+
+    @include breakpoint(small down) {
+      display: none;
+    }
+
+    & * {
+      transition: scale 0.3s linear;
+    }
+  }
+
+  &__desktop {
+    @include breakpoint(small down) {
+      display: none;
+    }
+  }
+
+  &__mobile {
+    display: none;
+    @include breakpoint(small down) {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,32 @@
+.text-center-block {
+
+  &__content {
+    max-width: 706px;
+    margin: 0 auto;
+
+    & * {
+      text-align: center;
+    }
+
+    h2 {
+      margin-bottom: 24px;
+    }
+
+    p{
+      font-weight: 500;
+      @include breakpoint(small down) {
+        font-weight: 400;
+      }
+    }
+
+    @include breakpoint(medium down) {
+      margin: 0 auto;
+    }
+
+    @include breakpoint(small down) {
+      max-width: 326px;
+    }
+  }
+}
+
+

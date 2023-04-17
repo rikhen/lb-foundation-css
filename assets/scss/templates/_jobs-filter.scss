@@ -1,0 +1,184 @@
+.jobs-filter {
+  &__filter {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 30px;
+    align-items: start;
+    max-width: 308px;
+    margin: 0  auto 32px;
+    @include breakpoint(medium) {
+      grid-template-columns: 1fr 1fr min-content;
+      max-width: 798px;
+      margin-bottom: 243px;
+    }
+  }
+  &__item {
+    position: relative;
+    &:last-child {
+      text-align: center;
+    }
+  }
+  .jobs_output {
+    max-width: 890px;
+    margin: 0 auto;
+  }
+  &__dropdown-head {
+    padding: 13px 43px 13px 16px;
+    border: 1px solid $text-color;
+    border-radius: 4px;
+    position: relative;
+    cursor: pointer;
+    font-weight: 500;
+    &::after {
+      content: url(../images/select-icon.svg);
+      position: absolute;
+      top: 50%;
+      right: 16px;
+      transform: translateY(-50%) rotate(180deg);
+      transition: transform 0.3s ease-in-out;
+    }
+  }
+  &__dropdown {
+    background-color: $white;
+    position: absolute;
+    top: calc(100% - 4px);
+    left: 0;
+    width: 100%;
+    max-height: 5px;
+    transition: max-height 0.3s ease-in-out, visibility 0.3s ease-in-out;
+    overflow-y: auto;
+    z-index: 5;
+    border: 1px solid $text-color;
+    border-radius: 0 0 4px 4px;
+    visibility: hidden;
+    &-wrapper {
+      padding: 14px 16px;
+    }
+    &-item {
+      cursor: pointer;
+      &:hover {
+        color: $main_color;
+      }
+      &:not(:last-child) {
+        margin-bottom: 16px;
+      }
+    }
+  }
+  .jobs-filter__item.active {
+    .jobs-filter__dropdown-head::after {
+      transform: translateY(-50%);
+    }
+    .jobs-filter__dropdown {
+      max-height: 205px;
+      visibility: visible;
+    }
+  }
+  .dot_round {
+    width: 12px;
+    height: 12px;
+    border: 1px solid $text-color;
+    border-radius: 50%;
+    display: inline-block;
+    margin-right: 16px;
+    padding: 1px;
+    &::before {
+      content: '';
+      display: block;
+      width: 100%;
+      height: 100%;
+      border-radius: 50%;
+      background: none;
+    }
+  }
+  .active_postcode .dot_round::before {
+    background: $text-color;
+  }
+}
+
+.jobs-filter-block {
+  &__head {
+    max-width: 326px;
+    margin: 0 auto 56px;
+    .title {
+      font-size: 30px;
+      line-height: 39px;
+    }
+    @include breakpoint(medium) {
+      max-width: 890px;
+      .title {
+        font-size: 49px;
+        line-height: 57px;
+      }
+    }
+  }
+  .jobs-filter__footer {
+    text-align: center;
+    margin-top: 35px;
+    @include breakpoint(medium) {
+      margin-top: 50px;
+    }
+  }
+  .jobs-output__title {
+    margin-bottom: 50px;
+  }
+}
+
+.jobs_list__item {
+  &:not(:last-child) {
+    margin-bottom: 24px;
+  }
+  a {
+    display: grid;
+    grid-template-columns: 1fr min-content;
+    position: relative;
+    color: $text-color;
+    .jobs_list__location {
+      grid-row: 2 / 3;
+      font-size: 13px;
+      margin-top: 16px;
+    }
+    .jobs_list__title {
+      font-size: 18px;
+    }
+    @include breakpoint(medium) {
+      grid-template-columns: 2fr 1fr min-content;
+      .jobs_list__location {
+        grid-row: auto;
+        font-size: 18px;
+        margin-top: 0;
+      }
+    }
+    &::after {
+      content: url(../images/select-icon.svg);
+      display: inline-block;
+      transform: translateY(-50%) rotate(90deg);
+      position: absolute;
+      top: 50%;
+      right: 0;
+      transition: transform 0.3s ease-in-out;
+      @include breakpoint(medium) {
+        grid-row: auto;
+        position: relative;
+        top: auto;
+        right: auto;
+        transform: rotate(90deg);
+      }
+    }
+    &:hover {
+      color: $main_color;
+      @include breakpoint(medium) {
+        &::after {
+          transform: translateX(4px) rotate(90deg);
+        }
+      }
+    }
+  }
+}
+
+.search-content {
+  padding: 50px 0;
+
+  @include breakpoint(medium) {
+    padding: 125px 0;
+  }
+}

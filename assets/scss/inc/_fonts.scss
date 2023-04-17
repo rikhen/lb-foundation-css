@@ -1,0 +1,34 @@
+/* -----------------------------------------
+   Include fonts
+----------------------------------------- */
+
+//@font-face {
+//	font-family: $font;
+//	font-style: normal;
+//	font-weight: 500;
+//	font-display: swap;
+//	src: url("../fonts/HelveticaNeueCyr-Medium.woff2") format('woff2');
+//}
+//
+//@font-face {
+//	font-family: $font;
+//	font-style: normal;
+//	font-weight: 400;
+//	font-display: swap;
+//	src: url("../fonts/HelveticaNeueCyr-Roman.woff2") format('woff2');
+//}
+@font-face {
+	font-family: $font;
+	font-style: normal;
+	font-weight: 500;
+	font-display: swap;
+	src: url("../fonts/HelveticaNeueLTPro-Md.woff2") format('woff2');
+}
+
+@font-face {
+	font-family: $font;
+	font-style: normal;
+	font-weight: 400;
+	font-display: swap;
+	src: url("../fonts/HelveticaNeueLTPro-Roman.woff2") format('woff2');
+}

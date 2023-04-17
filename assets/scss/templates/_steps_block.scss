@@ -1,0 +1,142 @@
+.steps {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+  grid-column-gap: 38px;
+
+  &-mobile {
+    display: none;
+    @include breakpoint(922px down) {
+      display: flex;
+      flex-direction: column;
+      row-gap: 30px;
+      @include breakpoint(small down) {
+        max-width: 326px;
+        margin: 0 auto;
+        row-gap: 40px;
+      }
+    }
+  }
+
+  &-desktop {
+    @include breakpoint(922px down) {
+      display: none;
+    }
+  }
+
+  &-item {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    position: relative;
+
+    @include breakpoint(922px down) {
+      flex-direction: row;
+      column-gap: 24px;
+      align-items: flex-start;
+    }
+
+    &:not(:last-child) .steps-item__number:after {
+      content: '';
+      width: calc(100% - 85px);
+      height: 1px;
+      position: absolute;
+      left: 155px;
+      border-radius: 1.5px;
+      display: block;
+      background: #f0f0f0;
+      @include breakpoint(medium down) {
+        width: calc(100% - 40px);
+        left: 73%;
+      }
+
+      @include breakpoint(922px down) {
+        width: 1px;
+        height: calc(100% - 44px);
+        left: 24px;
+        top: 62px;
+      }
+    }
+
+    &__content {
+      text-align: center;
+      @include breakpoint(922px down) {
+        text-align: start;
+      }
+    }
+
+    &__number {
+      margin-bottom: 32px;
+      min-width: 48px;
+      height: 48px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      border: 1.5px solid #f0f0f0;
+
+      @include breakpoint(922px down) {
+        margin-bottom: 0;
+      }
+    }
+
+    &__image {
+      margin-bottom: 48px;
+      height: 80px;
+      display: flex;
+      align-items: center;
+      @include breakpoint(922px down) {
+        height: 48px;
+        max-width: 58px;
+        margin-bottom: 12px;
+      }
+
+      img {
+        @include breakpoint(small down) {
+          transform: scale(0.8);
+          -webkit-transform-origin-x: 0;
+        }
+      }
+    }
+  }
+
+  &-block {
+    &__top-content {
+      max-width: 706px;
+      margin: 0 auto 75px;
+
+      & * {
+        text-align: center;
+      }
+
+      .subtitle {
+        max-width: 538px;
+        margin: 0 auto 16px;
+        letter-spacing: 1.4px;
+        @include breakpoint(small down) {
+          margin-bottom: 8px;
+        }
+      }
+
+      @include breakpoint(medium down) {
+        margin: 0 auto 50px;
+      }
+
+      @include breakpoint(small down) {
+        max-width: 326px;
+      }
+    }
+
+    &__button {
+      display: flex;
+      justify-content: center;
+      margin-top: 75px;
+      @include breakpoint(medium down) {
+        margin-top: 32px;
+
+      }
+    }
+
+  }
+
+}

@@ -1,0 +1,361 @@
+.block-maps_wrapper {
+
+	&__content {
+		margin-bottom: 50px;
+
+		@include breakpoint(medium) {
+			margin-bottom: 75px;
+		}
+
+		&--title {
+			max-width: 706px;
+			margin: 0 auto;
+			text-align: center;
+		}
+	}
+
+	.grid-container {
+		@include breakpoint(small down) {
+			padding: 0;
+		}
+	}
+
+	&__maps {
+		.popup-location--address,
+		.popup-location--mail a {
+			font-size: 13px;
+			line-height: 19px;
+			letter-spacing: 0.13px;
+			font-weight: 400;
+
+			@include breakpoint(medium) {
+				font-size: 15px;
+				line-height: 23px;
+				letter-spacing: 0.15px;
+			}
+		}
+
+		.popup-location--telephone-title,
+		.popup-location--telephone-number a {
+			font-size: 13px;
+			line-height: 19px;
+			letter-spacing: 0.13px;
+			font-weight: 500;
+			color: #262626;
+
+			@include breakpoint(medium) {
+				font-size: 15px;
+				line-height: 23px;
+				letter-spacing: 0.15px;
+			}
+		}
+
+		.popup-location--contact-info {
+			font-size: 11px;
+			line-height: 19px;
+			letter-spacing: 0.88px;
+			font-weight: 500;
+			text-transform: uppercase;
+
+			@include breakpoint(medium) {
+				font-size: 15px;
+				line-height: 23px;
+				letter-spacing: 1.5px;
+			}
+		}
+
+		.popup-location--title-jobs {
+			font-size: 11px;
+			line-height: 16px;
+			letter-spacing: 0.88px;
+			font-weight: 500;
+			text-transform: uppercase;
+			max-width: 173px;
+
+			@include breakpoint(medium) {
+				font-size: 14px;
+				line-height: 24px;
+				letter-spacing: 1.4px;
+			}
+		}
+
+		.popup-location--text-info .popup-location--text,
+		.popup-location--text-info .popup-location--button,
+		.popup-location--link--all-jobs a,
+		.popup-location--links-jobs a {
+			font-size: 13px;
+			line-height: 18px;
+			letter-spacing: 0.13px;
+			font-weight: 500;
+			color: #fff;
+
+			@include breakpoint(medium) {
+				font-size: 15px;
+				line-height: 23px;
+				letter-spacing: 0.15px;
+			}
+		}
+
+		.popup-location--mail a {
+			color: #444444;
+		}
+
+		.popup-location--link--all-jobs a,
+		.popup-location--links-jobs a {
+			display: inline-block;
+		}
+
+		.wpgmp_iw_content {
+			width: 358px;
+		}
+
+		.wpgmp_infowindow {
+			border: 0 !important;
+			overflow-x: inherit;
+			overflow-y: inherit;
+			max-width: 714px;
+		}
+
+		.infowindow-close {
+			background-image: url('../images/button-close.svg');
+			position: absolute;
+			top: -45px;
+			right: -59px;
+			width: 37px;
+			height: 37px;
+			box-shadow: 0px 3px 6px rgba(0, 0, 0, .16);
+			border-radius: 50%;
+			background-color: #fff;
+		}
+
+		.infoBoxTail:after {
+			display: none;
+		}
+
+		.jobs-wrapper {
+			padding: 24px;
+			background-color: #EB0A0A;
+			color: #fff;
+		}
+
+		.popup-location--title {
+			font-size: 18px;
+			line-height: 26px;
+			letter-spacing: 0.18px;
+			font-weight: 500;
+			color: #444444;
+		}
+
+		.popup-location--link--all-jobs a,
+		.popup-location--links-jobs a,
+		.popup-location--button {
+			position: relative;
+			padding-left: 39px;
+		}
+
+		.popup-location--link--all-jobs a:before,
+		.popup-location--links-jobs a:before,
+		.popup-location--button:before {
+			content: '';
+			background-image: url('../images/arrow-white.svg');
+			background-repeat: no-repeat;
+			position: absolute;
+			top: 6px;
+			left: 0;
+			width: 23px;
+			height: 10px;
+			transition: left .3s linear;
+		}
+
+		.popup-location--title {
+			margin-bottom: 24px;
+		}
+
+		.popup-location--address {
+			max-width: 100%;
+		}
+
+		.popup-location__col--contact-info {
+			display: flex;
+			flex: 1;
+		}
+
+		.popup-location--person {
+			margin-right: 19px;
+		}
+
+		.popup-location--person {
+			img {
+				width: 61px;
+				height: 61px;
+				object-fit: cover;
+				border-radius: 50%;
+			}
+		}
+
+		.popup-location--info {
+			padding: 24px;
+			background-color: #fff;
+		}
+
+		.popup-location__col--telephone-info {
+			position: relative;
+		}
+
+		.popup-location__col--telephone-info {
+			&:before {
+				left: -25px;
+			}
+		}
+
+		.popup-location__col--telephone-info {
+			&:after {
+				right: -30px;
+			}
+		}
+
+		.popup-location__col--telephone-info {
+			&:before,
+			&:after {
+				content: '';
+				position: absolute;
+				top: 0;
+				width: 1.5px;
+				background-color: #F0F0F0;
+				height: 100%;
+			}
+		}
+
+		.popup-location--text-info .popup-location--text {
+			margin-bottom: 14px;
+		}
+
+		.popup-location--mail a,
+		.popup-location--telephone-number a {
+
+			&:hover {
+				color: #890606;
+			}
+		}
+
+		.popup-location--info {
+			border-radius: 4px 4px 0 0;
+		}
+
+		.jobs-wrapper {
+			border-radius: 0 0 4px 4px;
+		}
+
+		.popup-location--text-info .popup-location--button {
+			margin-bottom: 0;
+		}
+
+		.popup-location--text-info {
+			margin-top: 37px;
+		}
+
+		.popup-location--button,
+		.popup-location--link--all-jobs a,
+		.popup-location--links-jobs a {
+			&:hover {
+				&:before {
+					left: 5px;
+				}
+			}
+		}
+
+		@include breakpoint(small down) {
+			.popup-location__col--address {
+				margin-bottom: 16px;
+			}
+
+			.popup-location--title-jobs {
+				margin-bottom: 32px;
+			}
+
+			.wpgmp_infowindow {
+				width: 100% !important;
+			}
+
+			.popup-location__col--telephone-info {
+				margin-bottom: 32px;
+			}
+
+			.popup-location--row-jobs {
+				display: flex;
+				flex-direction: column-reverse;
+			}
+
+			.popup-location--links-jobs {
+				margin-bottom: 40px;
+			}
+
+			.popup-location--text {
+				max-width: 259px;
+			}
+		}
+
+		@include breakpoint(medium) {
+			.popup-location {
+				width: 714px;
+			}
+
+			.popup-location--info {
+				padding: 42px 50px 34px 40px;
+			}
+
+			.popup-location__row {
+				display: flex;
+				justify-content: space-between;
+			}
+
+			.popup-location__col--address {
+				margin-right: 43px;
+				width: 112px;
+			}
+
+			.popup-location__col--telephone-info {
+				margin-right: 50px;
+				width: 200px;
+			}
+
+			.jobs-wrapper {
+				padding: 33px 50px 36px 40px;
+			}
+
+			.popup-location--row-jobs {
+				display: flex;
+				justify-content: space-between;
+				align-items: flex-end;
+				gap: 60px;
+				min-height: 50px;
+			}
+
+			.popup-location--title {
+				margin-bottom: 35px;
+			}
+
+			.infowindow-close {
+				top: -20px;
+				right: -13px;
+			}
+
+			.popup-location--link--all-jobs {
+				width: 45%;
+			}
+
+			.popup-location--links-jobs {
+				width: 55%;
+			}
+
+			.popup-location--link--all-jobs a,
+			.popup-location--links-jobs a,
+			.popup-location--button {
+				&:before {
+					width: 25px;
+					height: 12px;
+				}
+			}
+		}
+	}
+}

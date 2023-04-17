@@ -1,0 +1,52 @@
+.fluid-spacer {
+  &.gray {
+    background: $light_gray;
+  }
+
+  &.white {
+    background: transparent;
+  }
+
+  &.hide_mobile {
+    @include breakpoint(small down) {
+      display: none;
+    }
+  }
+
+  &.hide_desktop {
+    display: none;
+
+    @include breakpoint(small down) {
+      display: block;
+    }
+  }
+}
+
+.fluid-spacer-75 {
+  min-height: 75px;
+  @include breakpoint(small down) {
+    min-height: 28px;
+  }
+}
+
+.fluid-spacer-100 {
+  min-height: 100px;
+  @include breakpoint(small down) {
+    min-height: 37.5px;
+  }
+}
+
+.fluid-spacer-125 {
+  min-height: 125px;
+  @include breakpoint(small down) {
+    min-height: 50px;
+  }
+
+}
+
+.fluid-spacer-150 {
+  min-height: 150px;
+  @include breakpoint(small down) {
+    min-height: 75px;
+  }
+}
